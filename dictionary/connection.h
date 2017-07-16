@@ -24,7 +24,7 @@ namespace dictionary
 			std::size_t bytes_transfered);
 
 		/// Handle completion of a write operation
-		void handle_write(const boost::system::error_code& e);
+		void handle_write(const boost::system::error_code & e, std::size_t bytes_transfered);
 
 		/// Strand to ensure the connection's handlers are not called
 		/// concurently
