@@ -1,15 +1,18 @@
-#include <boost/lambda/lambda.hpp>
+#include "server.h"
 #include <iostream>
-#include <iterator>
-#include <algorithm>
 
 int main()
 {
-	using namespace boost::lambda;
-	typedef std::istream_iterator<int> in;
-
-	std::for_each(
-		in(std::cin), in(), std::cout << (_1 * 3) << " ");
+	try
+	{
+		dictionary::Server s("127.0.0.1", "8080",
+			"", 10);
+		s.run();
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
 
 	return 0;
 }
