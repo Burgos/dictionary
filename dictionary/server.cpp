@@ -26,11 +26,11 @@ void dictionary::Server::run()
 
 	for(std::size_t i = 0; i < thread_pool_size_; i++)
 	{
-		std::shared_ptr<boost::thread> thread(new boost::thread(
+		auto thread = std::make_shared<boost::thread>(
 			[this]()
 		{
 			io_service_.run();
-		}));
+		});
 		threads.push_back(thread);
 	}
 
