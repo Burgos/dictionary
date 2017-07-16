@@ -3,6 +3,7 @@
 
 dictionary::Server::Server(const std::string & address, const std::string& port, const std::string & doc_root, std::size_t thread_pool_size):
 	thread_pool_size_(thread_pool_size),
+	io_service_(),
 	acceptor_(io_service_)
 {
 	// Open the acceptor with the option to reuse the address
