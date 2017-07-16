@@ -155,6 +155,9 @@
     <ClInclude Include="request_parser.h" />
     <ClInclude Include="server.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE_1_0.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
