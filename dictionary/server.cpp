@@ -33,6 +33,11 @@ void dictionary::Server::run()
 		}));
 		threads.push_back(thread);
 	}
+
+	for (auto& t: threads)
+	{
+		t->join();
+	}
 }
 
 void dictionary::Server::start_accept()
